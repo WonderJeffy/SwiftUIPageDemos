@@ -11,16 +11,26 @@
 
 import SwiftUI
 import SwiftData
+import I18NResource
+import DemoPages
 
 struct ContentView: View {
+
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
 
     var body: some View {
         NavigationSplitView {
             List {
+                NavigationLink {
+                    DemoPages()
+                } label: {
+                    Text("DEMO_PAGES")
+                }
+
                 ForEach(items) { item in
                     NavigationLink {
+                        Text("HELLO_WORLD", bundle: .i18n)
                         Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
                     } label: {
                         Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))

@@ -15,6 +15,8 @@
 		9ED969092B18B3EA00E3EF4F /* SwiftUIPageDemosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED969082B18B3EA00E3EF4F /* SwiftUIPageDemosTests.swift */; };
 		9ED969132B18B3EA00E3EF4F /* SwiftUIPageDemosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED969122B18B3EA00E3EF4F /* SwiftUIPageDemosUITests.swift */; };
 		9ED969152B18B3EA00E3EF4F /* SwiftUIPageDemosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED969142B18B3EA00E3EF4F /* SwiftUIPageDemosUITestsLaunchTests.swift */; };
+		9ED969242B18C42300E3EF4F /* I18NResource in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED969232B18C42300E3EF4F /* I18NResource */; };
+		9EDA96AF2B1CC56400A3B0DA /* DemoPages in Frameworks */ = {isa = PBXBuildFile; productRef = 9EDA96AE2B1CC56400A3B0DA /* DemoPages */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		9ED9690E2B18B3EA00E3EF4F /* SwiftUIPageDemosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIPageDemosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED969122B18B3EA00E3EF4F /* SwiftUIPageDemosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPageDemosUITests.swift; sourceTree = "<group>"; };
 		9ED969142B18B3EA00E3EF4F /* SwiftUIPageDemosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPageDemosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9ED969212B18B9D900E3EF4F /* I18NResource */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = I18NResource; sourceTree = "<group>"; };
+		9EDA96B02B1CC57F00A3B0DA /* DemoPages */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DemoPages; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EDA96AF2B1CC56400A3B0DA /* DemoPages in Frameworks */,
+				9ED969242B18C42300E3EF4F /* I18NResource in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,10 +84,13 @@
 		9ED968E72B18B3E900E3EF4F = {
 			isa = PBXGroup;
 			children = (
+				9EDA96B02B1CC57F00A3B0DA /* DemoPages */,
+				9ED969212B18B9D900E3EF4F /* I18NResource */,
 				9ED968F22B18B3E900E3EF4F /* SwiftUIPageDemos */,
 				9ED969072B18B3EA00E3EF4F /* SwiftUIPageDemosTests */,
 				9ED969112B18B3EA00E3EF4F /* SwiftUIPageDemosUITests */,
 				9ED968F12B18B3E900E3EF4F /* Products */,
+				9ED969222B18C42300E3EF4F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +143,13 @@
 			path = SwiftUIPageDemosUITests;
 			sourceTree = "<group>";
 		};
+		9ED969222B18C42300E3EF4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,6 +166,10 @@
 			dependencies = (
 			);
 			name = SwiftUIPageDemos;
+			packageProductDependencies = (
+				9ED969232B18C42300E3EF4F /* I18NResource */,
+				9EDA96AE2B1CC56400A3B0DA /* DemoPages */,
+			);
 			productName = SwiftUIPageDemos;
 			productReference = 9ED968F02B18B3E900E3EF4F /* SwiftUIPageDemos.app */;
 			productType = "com.apple.product-type.application";
@@ -423,6 +443,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SwiftUIPageDemos/SwiftUIPageDemos.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIPageDemos/Preview Content\"";
@@ -431,6 +452,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftUIPageDemos/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -439,15 +461,16 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = cc.wonderjeffy.SwiftUIPageDemos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -462,6 +485,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SwiftUIPageDemos/SwiftUIPageDemos.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIPageDemos/Preview Content\"";
@@ -470,6 +494,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftUIPageDemos/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -478,15 +503,16 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = cc.wonderjeffy.SwiftUIPageDemos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -625,6 +651,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9ED969232B18C42300E3EF4F /* I18NResource */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = I18NResource;
+		};
+		9EDA96AE2B1CC56400A3B0DA /* DemoPages */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DemoPages;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9ED968E82B18B3E900E3EF4F /* Project object */;
 }

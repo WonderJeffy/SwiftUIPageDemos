@@ -10,10 +10,12 @@
 //
 
 import SwiftUI
+import DemoPages
 import SwiftData
 
 @main
 struct SwiftUIPageDemosApp: App {
+
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -26,9 +28,10 @@ struct SwiftUIPageDemosApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
-
+    
     var body: some Scene {
         WindowGroup {
+//            DemoPages()
             ContentView()
         }
         .modelContainer(sharedModelContainer)
