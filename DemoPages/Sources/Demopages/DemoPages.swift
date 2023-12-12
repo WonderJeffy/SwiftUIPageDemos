@@ -9,41 +9,31 @@
 //  Copyright © 2023 and Confidential to jeffy All rights reserved.
 //
 
-import SwiftUI
 import I18NResource
+import SwiftUI
 
 public struct DemoPages: View {
+    public init() {}
 
-    public init(){}
-    
     public var body: some View {
-        NavigationSplitView {
+        NavigationStack {
             List {
-//                ForEach(items) { item in
-                    NavigationLink {
-                        Text("HELLO_WORLD", bundle: .i18n)
-                    } label: {
-                        Text("HELLO_WORLD", bundle: .i18n)
-                    }
-                }
-//            }
-#if os(macOS)
-            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
-#endif
-            .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-#endif
-//                ToolbarItem {
-//                    Button(action: addItem) {
-//                        Label("Add Item", systemImage: "plus")
-//                    }
-//                }
+                DemoItem()
             }
-        } detail: {
-            Text("Select an item")
+            .navigationTitle(Text("APP_NAME", bundle: .i18n))
+        }
+        
+    }
+}
+
+struct DemoItem: View {
+    var body: some View {
+        VStack (alignment: .leading) {
+            Text("title")
+                .font(.title3)
+                .fontWeight(.medium)
+            Text("content")
+                .font(.body)
         }
     }
 }
