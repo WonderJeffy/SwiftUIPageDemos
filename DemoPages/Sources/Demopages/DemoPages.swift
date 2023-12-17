@@ -18,7 +18,11 @@ public struct DemoPages: View {
     public var body: some View {
         NavigationStack {
             List {
-                DemoItem()
+                NavigationLink {
+                    AnimatedTextView("SwiftUI Page Demos", fontSize: 36)
+                } label: {
+                    DemoItem()
+                }
             }
             .navigationTitle(Text("APP_NAME", bundle: .i18n))
         }
