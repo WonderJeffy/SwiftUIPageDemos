@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E7EF4E92B346C3A003142AF /* DemoPages in Frameworks */ = {isa = PBXBuildFile; productRef = 9E7EF4E82B346C3A003142AF /* DemoPages */; };
 		9ED968FA2B18B3EA00E3EF4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ED968F92B18B3EA00E3EF4F /* Assets.xcassets */; };
 		9ED968FE2B18B3EA00E3EF4F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ED968FD2B18B3EA00E3EF4F /* Preview Assets.xcassets */; };
 		9ED969092B18B3EA00E3EF4F /* SwiftUIPageDemosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED969082B18B3EA00E3EF4F /* SwiftUIPageDemosTests.swift */; };
 		9ED969132B18B3EA00E3EF4F /* SwiftUIPageDemosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED969122B18B3EA00E3EF4F /* SwiftUIPageDemosUITests.swift */; };
 		9ED969152B18B3EA00E3EF4F /* SwiftUIPageDemosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED969142B18B3EA00E3EF4F /* SwiftUIPageDemosUITestsLaunchTests.swift */; };
 		9ED969242B18C42300E3EF4F /* I18NResource in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED969232B18C42300E3EF4F /* I18NResource */; };
-		9EDA96AF2B1CC56400A3B0DA /* DemoPages in Frameworks */ = {isa = PBXBuildFile; productRef = 9EDA96AE2B1CC56400A3B0DA /* DemoPages */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EDA96AF2B1CC56400A3B0DA /* DemoPages in Frameworks */,
+				9E7EF4E92B346C3A003142AF /* DemoPages in Frameworks */,
 				9ED969242B18C42300E3EF4F /* I18NResource in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,7 +159,7 @@
 			name = SwiftUIPageDemos;
 			packageProductDependencies = (
 				9ED969232B18C42300E3EF4F /* I18NResource */,
-				9EDA96AE2B1CC56400A3B0DA /* DemoPages */,
+				9E7EF4E82B346C3A003142AF /* DemoPages */,
 			);
 			productName = SwiftUIPageDemos;
 			productReference = 9ED968F02B18B3E900E3EF4F /* SwiftUIPageDemos.app */;
@@ -233,6 +233,8 @@
 				Base,
 			);
 			mainGroup = 9ED968E72B18B3E900E3EF4F;
+			packageReferences = (
+			);
 			productRefGroup = 9ED968F12B18B3E900E3EF4F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -639,13 +641,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9E7EF4E82B346C3A003142AF /* DemoPages */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DemoPages;
+		};
 		9ED969232B18C42300E3EF4F /* I18NResource */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = I18NResource;
-		};
-		9EDA96AE2B1CC56400A3B0DA /* DemoPages */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DemoPages;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
