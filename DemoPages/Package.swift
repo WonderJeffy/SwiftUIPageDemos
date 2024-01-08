@@ -7,8 +7,7 @@ let package = Package(
     name: "DemoPages",
     defaultLocalization: "en", // 启用本地化支持
     platforms: [
-        .iOS(.v17),
-        .macOS(.v14)
+        .iOS(.v17)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.

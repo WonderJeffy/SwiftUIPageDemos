@@ -14,14 +14,24 @@ import SwiftUI
 
 public struct DemoPages: View {
     public init() {}
-
+    
     public var body: some View {
         NavigationStack {
             List {
                 NavigationLink {
                     AnimatedTextView("SwiftUI Page Demos", fontSize: 36)
                 } label: {
-                    DemoItem()
+                    DemoLabel(title: "Animated Text")
+                }
+                NavigationLink {
+                    OnBoardingView()
+                } label: {
+                    DemoLabel(title: "OnBoarding")
+                }
+                NavigationLink {
+                    DataCRUDView()
+                } label: {
+                    DemoLabel(title: "SwiftData CRUD")
                 }
             }
             .navigationTitle(Text("APP_NAME", bundle: .i18n))
@@ -30,14 +40,20 @@ public struct DemoPages: View {
     }
 }
 
-struct DemoItem: View {
+struct DemoLabel: View {
+    var title: String
+    var content: String?
     var body: some View {
         VStack (alignment: .leading) {
-            Text("title")
+            Text(title)
                 .font(.title3)
                 .fontWeight(.medium)
-            Text("content")
-                .font(.body)
+            Group {
+                if let content = content {
+                    Text(content)
+                        .font(.body)
+                }
+            }
         }
     }
 }
