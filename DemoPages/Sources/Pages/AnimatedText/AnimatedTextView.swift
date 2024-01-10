@@ -83,7 +83,6 @@ extension AnimatedTextView {
                     
                 if let index = self.calculateSelectedIndex(for: dragPosition) {
                     if index != selectedIndex {
-                        print("index:", index)
                         // light haptic feedback when focused index changes
                         HapticManager.shared.impact(.light)
                         // update selected index and scale factors

@@ -7,13 +7,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SwiftUI Page Demos"
+            "value" : "Page Demos"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SwiftUI Page Demos"
+            "value" : "Page Demos"
           }
         }
       }

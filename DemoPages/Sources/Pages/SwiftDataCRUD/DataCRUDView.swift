@@ -64,5 +64,24 @@ struct ItemDetailView: View {
 }
 
 #Preview {
-    DataCRUDView()
+    do {
+        let previewer = try Previewer()
+        return DataCRUDView()
+            .modelContainer(previewer.container)
+    } catch {
+        return Text("Failed to create preview: \(error.localizedDescription)")
+    }
+}
+
+@MainActor
+struct Previewer {
+    let container: ModelContainer
+    let item: Item
+
+    init() throws {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        container = try ModelContainer(for: Item.self, configurations: config)
+        item = Item(timestamp: Date(), name: "previewer")
+        container.mainContext.insert(item)
+    }
 }
