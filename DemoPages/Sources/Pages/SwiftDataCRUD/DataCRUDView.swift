@@ -11,50 +11,42 @@ import SwiftUI
 /// Create + Read + Update + Delete
 struct DataCRUDView: View {
     @Environment(\.modelContext) private var modelContext
-
-    @Query private var items: [Item]
-
+    @State private var path = NavigationPath()
+    @State private var sortOrder = [SortDescriptor(\Objective.name)]
     @State private var searchText = ""
 
-    private var filterItems: [Item] {
-        if searchText.isEmpty {
-            return items
-        } else {
-            return items.filter {
-                $0.name.localizedStandardContains(searchText)
-            }
-        }
-    }
-    
     var body: some View {
-        List {
-            Button(action: addItem) {
-                Label("Add Item", systemImage: "plus")
-            }
-            ForEach(filterItems) { item in
-                NavigationLink {
-                    ItemDetailView(item: item)
-                } label: {
-                    Text(item.name)
+        NavigationStack(path: $path) {
+            ObjectiveView(searchString: searchText, sortOrder: sortOrder)
+                .navigationTitle("Objective")
+                .navigationDestination(for: Objective.self) { obj in
+                    ObjectiveDetailView(objec: obj, navigationPath: $path)
                 }
-            }
-            .onDelete(perform: deleteItems)
+                .toolbar {
+                    Menu("Sort", systemImage: "arrow.up.arrow.down") {
+                        Picker("Sort", selection: $sortOrder) {
+                            Text("Name (A-Z)")
+                                .tag([SortDescriptor(\Objective.name)])
+
+                            Text("Name (Z-A)")
+                                .tag([SortDescriptor(\Objective.name, order: .reverse)])
+                        }
+                    }
+
+                    Button("Add Person", systemImage: "plus", action: addObjective)
+                }
+                .searchable(text: $searchText)
         }
-        .searchable(text: $searchText)
     }
 
-    private func addItem() {
-        let newItem = Item(timestamp: Date(), name: "default")
+    private func addObjective() {
+        let newItem = Objective(timestamp: Date(), name: "default")
         modelContext.insert(newItem)
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        offsets.map { items[$0] }.forEach(modelContext.delete)
     }
 }
 
 struct ItemDetailView: View {
-    @Bindable var item: Item
+    @Bindable var item: Objective
     var body: some View {
         Form {
             TextField("Name", text: $item.name)
@@ -76,12 +68,12 @@ struct ItemDetailView: View {
 @MainActor
 struct Previewer {
     let container: ModelContainer
-    let item: Item
+    let item: Objective
 
     init() throws {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
-        container = try ModelContainer(for: Item.self, configurations: config)
-        item = Item(timestamp: Date(), name: "previewer")
+        container = try ModelContainer(for: Objective.self, configurations: config)
+        item = Objective(timestamp: Date(), name: "previewer")
         container.mainContext.insert(item)
     }
 }
