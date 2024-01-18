@@ -33,6 +33,16 @@ public struct DemoPages: View {
                 } label: {
                     DemoLabel(title: "SwiftData CRUD")
                 }
+                NavigationLink {
+                    GeometryReader {
+                        let size = $0.size
+                        let safeArea = $0.safeAreaInsets
+                        StickyHeaderView(size: size, safeArea: safeArea) .ignoresSafeArea(.all,edges: .top)
+                    }
+                } label: {
+                    DemoLabel(title: "Sticky Header")
+                }
+                
             }
             .navigationTitle(Text("APP_NAME", bundle: .i18n))
         }
