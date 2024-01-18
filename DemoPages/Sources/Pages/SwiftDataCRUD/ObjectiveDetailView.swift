@@ -9,14 +9,14 @@
 //  Copyright © 2024 and Confidential to jeffy All rights reserved.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct ObjectiveDetailView: View {
     @Environment(\.modelContext) var modelContext
-        @Bindable var objec: Objective
-        @Binding var navigationPath: NavigationPath
-    
+    @Bindable var objec: Objective
+    @Binding var navigationPath: NavigationPath
+
     var body: some View {
         VStack {
             Text(objec.name)
@@ -29,6 +29,6 @@ struct ObjectiveDetailView: View {
     }
 }
 
-//#Preview {
+// #Preview {
 //    ObjectiveDetailView()
-//}
+// }

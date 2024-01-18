@@ -16,7 +16,7 @@ public struct DemoPages: View {
     public init() {}
     
     public var body: some View {
-        NavigationStack {
+        NavigationView {
             List {
                 NavigationLink {
                     AnimatedTextView("SwiftUI Page Demos", fontSize: 36)
