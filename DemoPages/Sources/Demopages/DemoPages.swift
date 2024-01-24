@@ -42,6 +42,11 @@ public struct DemoPages: View {
                 } label: {
                     DemoLabel(title: "Sticky Header")
                 }
+                NavigationLink {
+                    CustomTabbarView()
+                } label: {
+                    DemoLabel(title: "Custom Tabbar")
+                }
                 
             }
             .navigationTitle(Text("APP_NAME", bundle: .i18n))
