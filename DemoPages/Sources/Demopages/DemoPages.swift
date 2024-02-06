@@ -47,6 +47,16 @@ public struct DemoPages: View {
                 } label: {
                     DemoLabel(title: "Custom Tabbar")
                 }
+                NavigationLink {
+                    BaloonAnimationView()
+                } label: {
+                    DemoLabel(title: "Baloon Animation")
+                }
+                NavigationLink {
+                    EmojiPickerView()
+                } label: {
+                    DemoLabel(title: "Emoji Picker")
+                }
                 
             }
             .navigationTitle(Text("APP_NAME", bundle: .i18n))

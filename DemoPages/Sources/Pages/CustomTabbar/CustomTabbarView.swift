@@ -25,6 +25,8 @@ struct CustomTabbarView: View {
 
     @State private var selectedTab = 0
 
+    @State private var nums: [Int] = Array(0 ..< 100)
+
     var body: some View {
         VStack(spacing: 0) {
             TabView(selection: $selectedTab) {
@@ -36,9 +38,12 @@ struct CustomTabbarView: View {
                 Text("1")
                     .tag(1)
                 List {
-                    ForEach(0 ..< 100) { index in
+                    ForEach(nums, id: \.self) { index in
                         Text("\(index)")
                     }
+                    .onMove(perform: { indices, newOffset in
+                        nums.move(fromOffsets: indices, toOffset: newOffset)
+                    })
                 }.tag(2)
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
@@ -55,16 +60,18 @@ struct CustomTabBar: View {
             Image(systemName: systemName)
                 .font(.system(size: 20))
                 .padding(8)
-            Text(title)
-                .font(.system(size: 10))
+//            Text(title)
+//                .font(.system(size: 10))
         }
         .foregroundColor(selectedTab == index ? .white : .gray)
         .padding(.vertical, 8)
-        .frame(maxWidth: .infinity)
-        .background(selectedTab == index ? Color.red.opacity(0.2) : Color.clear)
-        .cornerRadius(10)
+        .frame(width: 60, height: 60)
+//        .background(selectedTab == index ? Color(red: 0.24, green: 0.84, blue: 0.60) : Color.clear)
+        .cornerRadius(30.0)
         .onTapGesture(perform: {
-            selectedTab = index
+            withAnimation(.default) {
+                selectedTab = index
+            }
         })
     }
 
@@ -72,17 +79,20 @@ struct CustomTabBar: View {
         ZStack {
             Rectangle()
                 .foregroundColor(.clear)
-                .frame(height: 126)
+                .frame(height: 96)
                 .background(Color(red: 0.19, green: 0.27, blue: 0.31))
                 .cornerRadius(25)
                 .offset(x: 0, y: 0)
+            Circle()
+                .foregroundColor(Color(red: 0.24, green: 0.84, blue: 0.60))
+                .frame(width: 60, height: 60)
             HStack(alignment: .center) {
                 Spacer()
-                tabItemView(0, systemName: "house", title: "home")
+                tabItemView(0, systemName: "chart.pie.fill", title: "home")
                 Spacer()
-                tabItemView(1, systemName: "house", title: "home")
+                tabItemView(1, systemName: "house.fill", title: "home")
                 Spacer()
-                tabItemView(2, systemName: "house", title: "home")
+                tabItemView(2, systemName: "folder.fill", title: "home")
                 Spacer()
             }
         }
