@@ -11,6 +11,7 @@
 
 import SwiftUI
 import SwiftData
+import DemoPages
 
 @main
 struct DemoApp: App {

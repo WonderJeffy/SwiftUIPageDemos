@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E5C02672D1FF4040004C3E0 /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5C02642D1FF4040004C3E0 /* DemoApp.swift */; };
 		9E7EF4E92B346C3A003142AF /* DemoPages in Frameworks */ = {isa = PBXBuildFile; productRef = 9E7EF4E82B346C3A003142AF /* DemoPages */; };
 		9ED968FA2B18B3EA00E3EF4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ED968F92B18B3EA00E3EF4F /* Assets.xcassets */; };
 		9ED968FE2B18B3EA00E3EF4F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ED968FD2B18B3EA00E3EF4F /* Preview Assets.xcassets */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E5C02642D1FF4040004C3E0 /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
+		9E5C02682D1FF42C0004C3E0 /* SwiftUIPageDemos-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftUIPageDemos-Bridging-Header.h"; sourceTree = "<group>"; };
 		9ED968F02B18B3E900E3EF4F /* SwiftUIPageDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIPageDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED968F92B18B3EA00E3EF4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9ED968FB2B18B3EA00E3EF4F /* SwiftUIPageDemos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUIPageDemos.entitlements; sourceTree = "<group>"; };
@@ -101,10 +104,12 @@
 		9ED968F22B18B3E900E3EF4F /* SwiftUIPageDemos */ = {
 			isa = PBXGroup;
 			children = (
+				9E5C02642D1FF4040004C3E0 /* DemoApp.swift */,
 				9ED968F92B18B3EA00E3EF4F /* Assets.xcassets */,
 				9ED968FB2B18B3EA00E3EF4F /* SwiftUIPageDemos.entitlements */,
 				9ED968FF2B18B3EA00E3EF4F /* Info.plist */,
 				9ED968FC2B18B3EA00E3EF4F /* Preview Content */,
+				9E5C02682D1FF42C0004C3E0 /* SwiftUIPageDemos-Bridging-Header.h */,
 			);
 			path = SwiftUIPageDemos;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				TargetAttributes = {
 					9ED968EF2B18B3E900E3EF4F = {
 						CreatedOnToolsVersion = 15.1;
+						LastSwiftMigration = 1610;
 					};
 					9ED969032B18B3EA00E3EF4F = {
 						CreatedOnToolsVersion = 15.1;
@@ -277,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E5C02672D1FF4040004C3E0 /* DemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SwiftUIPageDemos/SwiftUIPageDemos.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +474,8 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftUIPageDemos/SwiftUIPageDemos-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -476,6 +486,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SwiftUIPageDemos/SwiftUIPageDemos.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -510,6 +521,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftUIPageDemos/SwiftUIPageDemos-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

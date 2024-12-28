@@ -13,7 +13,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class Objective {
+public final class Objective {
     
     @Attribute(.unique) var timestamp: Date
     
